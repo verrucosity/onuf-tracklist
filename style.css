@@ -13,9 +13,10 @@ body, html {
     justify-content: center;
     align-items: center;
     overflow-y: auto; /* Allow scrolling */
+    background-color: #000; /* Fallback color to prevent white flashes */
 }
 
-/* Background GIF or fallback */
+/* Background GIF or Fallback */
 body {
     background: url('https://media.giphy.com/media/l1BgRuUbcL5wgQLtu/giphy.gif') no-repeat center center fixed;
     background-size: cover;
@@ -26,6 +27,7 @@ body {
     body {
         background: url('https://images.unsplash.com/photo-1519810755548-39cd217da494?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
         background-size: cover;
+        background-color: #000; /* Ensure consistent black background */
     }
 }
 
