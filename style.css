@@ -19,7 +19,7 @@ body, html {
 /* Background GIF or fallback */
 body {
     background: url('https://media.giphy.com/media/l1BgRuUbcL5wgQLtu/giphy.gif') no-repeat center center fixed;
-    background-size: cover;
+    background-size: 100% 100%; /* Stretch the GIF to cover the entire viewport */
     background-color: #000; /* Ensure black fallback color for devices that can't load GIFs */
 }
 
