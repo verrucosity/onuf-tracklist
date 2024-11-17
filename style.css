@@ -9,18 +9,18 @@ body, html {
     height: 100%;
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto; /* Allow scrolling */
+    overflow: hidden; /* Prevent scrolling */
     background-color: #000; /* Ensure no white background flashes */
 }
 
 /* Background GIF or fallback */
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: url('https://media.giphy.com/media/l1BgRuUbcL5wgQLtu/giphy.gif') no-repeat center center fixed;
-    background-size: 100% 100%; /* Stretch the GIF to cover the entire viewport */
-    background-color: #000; /* Ensure black fallback color for devices that can't load GIFs */
+    background-size: cover; /* Ensure the background spans the full screen */
+    background-color: #000; /* Fallback color for unsupported devices */
 }
 
 /* Fallback for Mobile: Static Image */
@@ -29,17 +29,6 @@ body {
         background: url('https://images.unsplash.com/photo-1519810755548-39cd217da494?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
         background-size: cover;
     }
-}
-
-/* Hide Scrollbars for Main Page */
-body::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
-
-body {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
 }
 
 #particle-background {
@@ -53,18 +42,33 @@ body {
 
 /* Content Container */
 .content {
-    max-width: 900px;
+    max-width: 800px;
     width: 90%;
     padding: 30px;
-    background: rgba(15, 15, 30, 0.7);
+    background: rgba(15, 15, 30, 0.8);
     border-radius: 15px;
-    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.2);
     text-align: center;
     animation: fadeIn 2s ease;
     z-index: 1;
     backdrop-filter: blur(10px);
-    margin: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70%; /* Make it taller */
+    margin: auto; /* Center horizontally and vertically */
+    position: relative;
+}
+
+/* Adjust content centering for smaller screens */
+@media (max-width: 768px) {
+    .content {
+        max-width: 90%;
+        padding: 20px;
+        min-height: 60%; /* Adjust height for smaller screens */
+    }
 }
 
 /* Fade-in Animation */
@@ -155,15 +159,6 @@ body {
     text-shadow: 0 0 10px #ffdab9;
 }
 
-/* Specific Styling for A and B Side Lists */
-.a-side ul li {
-    text-transform: lowercase;
-}
-
-.b-side ul li {
-    text-transform: uppercase;
-}
-
 /* Modal Styling */
 .modal {
     display: none; /* Ensure the modal is hidden by default */
@@ -214,26 +209,6 @@ body {
         opacity: 1;
         transform: scale(1);
     }
-}
-
-/* Hide Scrollbars for Modal Content */
-.modal-content::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
-
-.modal-content {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-}
-
-.close-button {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 24px;
-    color: #e0e6f1;
-    cursor: pointer;
 }
 
 /* Mobile-friendly */
