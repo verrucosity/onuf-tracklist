@@ -13,12 +13,14 @@ body, html {
     justify-content: center;
     align-items: center;
     overflow-y: auto; /* Allow scrolling */
+    background-color: #000; /* Ensure no white background flashes */
 }
 
 /* Background GIF or fallback */
 body {
     background: url('https://media.giphy.com/media/l1BgRuUbcL5wgQLtu/giphy.gif') no-repeat center center fixed;
     background-size: cover;
+    background-color: #000; /* Ensure black fallback color for devices that can't load GIFs */
 }
 
 /* Fallback for Mobile: Static Image */
