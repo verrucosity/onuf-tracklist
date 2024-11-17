@@ -15,10 +15,18 @@ body, html {
     overflow-y: auto; /* Allow scrolling */
 }
 
-/* Background GIF */
+/* Background GIF or fallback */
 body {
     background: url('https://media.giphy.com/media/l1BgRuUbcL5wgQLtu/giphy.gif') no-repeat center center fixed;
     background-size: cover;
+}
+
+/* Fallback for Mobile: Static Image */
+@media (max-width: 768px) {
+    body {
+        background: url('https://images.unsplash.com/photo-1519810755548-39cd217da494?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+        background-size: cover;
+    }
 }
 
 /* Hide Scrollbars for Main Page */
